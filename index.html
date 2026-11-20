@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAO TRỌNG Ý | Portfolio</title>
+
+<style>
+
+:root{
+    --gold:#d4af37;
+    --gold-dark:#aa7f18;
+    --gold-light:#fff7d6;
+    --text:#333;
+    --white:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Segoe UI,sans-serif;
+    color:var(--text);
+    background:#fffdf8;
+    overflow-x:hidden;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(10px);
+    box-shadow:0 2px 20px rgba(0,0,0,.05);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.logo{
+    font-weight:700;
+    color:var(--gold-dark);
+    font-size:24px;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:var(--gold-dark);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,.55),
+        rgba(255,255,255,.80)
+    ),
+    url("cover.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:120px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.avatar{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+
+    border:8px solid white;
+
+    box-shadow:
+    0 20px 50px rgba(212,175,55,0.35);
+
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero h2{
+    color:var(--gold-dark);
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:14px 35px;
+    background:var(--gold);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:var(--gold-dark);
+    transform:translateY(-2px);
+}
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.title h2{
+    color:var(--gold-dark);
+    font-size:36px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:var(--gold-dark);
+    margin-bottom:15px;
+}
+
+.timeline{
+    position:relative;
+    max-width:800px;
+    margin:auto;
+}
+
+.timeline-item{
+    margin-bottom:30px;
+    background:white;
+    padding:25px;
+    border-left:5px solid var(--gold);
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    height:350px;
+    object-fit:cover;
+}
+
+.contact-box{
+    text-align:center;
+    background:var(--gold-light);
+    padding:50px;
+    border-radius:25px;
+}
+
+.contact-links{
+    margin-top:25px;
+}
+
+.contact-links a{
+    display:inline-block;
+    margin:10px;
+    padding:12px 25px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    background:var(--gold);
+    color:white;
+}
+
+footer{
+    background:#faf5de;
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.hero h2{
+font-size:1rem;
+}
+
+.avatar{
+width:180px;
+height:180px;
+}
+
+nav{
+flex-direction:column;
+}
+
+nav ul{
+margin-top:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+
+<div class="logo">
+CAO TRỌNG Ý
+</div>
+
+<ul>
+<li><a href="#about">Giới thiệu</a></li>
+<li><a href="#skills">Kỹ năng</a></li>
+<li><a href="#education">Học tập</a></li>
+<li><a href="#gallery">Hình ảnh</a></li>
+<li><a href="#contact">Liên hệ</a></li>
+</ul>
+
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="avatar.jpg" class="avatar">
+
+<h1>CAO TRỌNG Ý</h1>
+
+<h2>
+유통마케팅 Student | Namseoul University
+</h2>
+
+<p>
+
+Xin chào! Tôi là Cao Trọng Ý, sinh viên ngành
+Distribution & Marketing tại Namseoul University (Hàn Quốc).
+
+Tôi yêu thích Marketing, Branding,
+Digital Marketing và các hoạt động phát triển thương hiệu
+trong môi trường quốc tế.
+
+</p>
+
+<a href="#contact" class="btn">
+Kết nối với tôi
+</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="container">
+
+<div class="title">
+<h2>Giới thiệu bản thân</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Thông tin cá nhân</h3>
+
+<p>👤 CAO TRỌNG Ý</p>
+<p>🎓 Namseoul University</p>
+<p>📚 유통마케팅</p>
+<p>🌏 Việt Nam</p>
+<p>📍 Hàn Quốc</p>
+
+</div>
+
+<div class="card">
+<h3>Định hướng nghề nghiệp</h3>
+
+<p>
+Trở thành chuyên gia Digital Marketing và Marketing quốc tế,
+kết nối doanh nghiệp Việt Nam và Hàn Quốc.
+</p>
+
+</div>
+
+<div class="card">
+<h3>Điểm mạnh</h3>
+
+<p>✔ Tư duy marketing</p>
+<p>✔ Khả năng học hỏi</p>
+<p>✔ Giao tiếp đa ngôn ngữ</p>
+<p>✔ Làm việc nhóm</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<div class="container">
+
+<div class="title">
+<h2>Kỹ năng</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Marketing</h3>
+<p>Digital Marketing</p>
+<p>Content Marketing</p>
+<p>Social Media Marketing</p>
+<p>Branding</p>
+</div>
+
+<div class="card">
+<h3>Business</h3>
+<p>Market Research</p>
+<p>Consumer Analysis</p>
+<p>Presentation Skills</p>
+</div>
+
+<div class="card">
+<h3>Office</h3>
+<p>PowerPoint</p>
+<p>Excel</p>
+<p>Word</p>
+<p>Canva</p>
+</div>
+
+<div class="card">
+<h3>Languages</h3>
+<p>🇻🇳 Tiếng Việt</p>
+<p>🇰🇷 한국어</p>
+<p>🇺🇸 English</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<div class="container">
+
+<div class="title">
+<h2>Hành trình học tập</h2>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Namseoul University</h3>
+<p>
+Theo học chuyên ngành Distribution & Marketing.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Hoạt động học thuật</h3>
+<p>
+Nghiên cứu Marketing, hành vi khách hàng,
+chiến lược thương hiệu.
+</p>
+</div>
+
+<div class="timeline-item">
+<h3>Phát triển bản thân</h3>
+<p>
+Tham gia các hoạt động ngoại khóa,
+rèn luyện kỹ năng lãnh đạo và teamwork.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="title">
+<h2>Khoảnh khắc nổi bật</h2>
+</div>
+
+<div class="gallery">
+
+<img src="avatar.jpg">
+
+<img src="cover.jpg">
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>Liên hệ</h2>
+
+<p>
+Tôi luôn sẵn sàng kết nối và học hỏi từ những cơ hội mới.
+</p>
+
+<div class="contact-links">
+
+<a href="#">Facebook</a>
+
+<a href="#">Instagram</a>
+
+<a href="#">LinkedIn</a>
+
+<a href="mailto:yourmail@gmail.com">Email</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 CAO TRỌNG Ý
+
+<br>
+
+Portfolio Website
+
+</footer>
+
+</body>
+</html>
